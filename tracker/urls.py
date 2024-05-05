@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     # Add this line for the about page
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('overview/', views.overview, name='overview'),
     path('transaction/', views.transaction, name='transaction'),
     path('financial/', views.financial, name='financial'),
     path('budgeting/', views.budgeting, name='budgeting'),

@@ -16,6 +16,10 @@ def dashboard(request):
     return render(request, 'dashboard.html')
 
 
+def overview(request):
+    return render(request, 'overview.html')
+
+
 def transaction(request):
     # Logic to fetch and process transaction data from the database
     # You can replace this with your actual logic to fetch transaction data

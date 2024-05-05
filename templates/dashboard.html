@@ -22,7 +22,11 @@
             <ul class="nav flex-column text-white w-100">
                 <li class="nav-link">
                     <i class="an an-home"></i>
-                    <span class="mx-2"><a href="{% url 'dashboard' %}">Overview</a></span>
+                    <span class="mx-2"><a href="{% url 'dashboard' %}">Dashboard</a></span>
+                </li>
+                <li class="nav-link">
+                    <i class="an an-home"></i>
+                    <span class="mx-2"><a href="{% url 'overview' %}">Overview</a></span>
                 </li>
                 <li class="nav-link">
                     <i class="an an-user"></i>
@@ -56,7 +60,7 @@
         <!-- Main Wrapper -->
         <div class="p-1 my-container active-cont">
             <!-- Top Nav -->
-            <nav class="navbar top-navbar navbar-light bg-light px-5">
+            <nav class="navbar top-navbar navbar-light px-5">
                 <a class="btn border-0" id="menu-btn"><i class="an an-menu"></i></a>
             </nav>
             <!--End Top Nav -->
@@ -66,7 +70,7 @@
                         <!-- Main Content -->
                         <div class="main-content">
                             {% block content %}
-                            <h1>Overview</h1>
+                            <h1>Dashboard</h1>
                             {% endblock %}
                         </div>
                     </div>

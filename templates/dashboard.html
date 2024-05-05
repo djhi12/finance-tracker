@@ -22,7 +22,7 @@
             <ul class="nav flex-column text-white w-100">
                 <li class="nav-link">
                     <i class="an an-home"></i>
-                    <span class="mx-2"><a href="{% block overview %}#{% endblock %}">Overview</a></span>
+                    <span class="mx-2"><a href="{% url 'dashboard' %}">Overview</a></span>
                 </li>
                 <li class="nav-link">
                     <i class="an an-user"></i>
@@ -30,19 +30,19 @@
                 </li>
                 <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2"><a href="{% block financial-goals %}#{% endblock %}">Financial Goals</a></span>
+                    <span class="mx-2"><a href="{% url 'financial' %}">Financial Goals</a></span>
                 </li>
                 <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2"><a href="{% block budgeting %}#{% endblock %}">budgeting</a></span>
+                    <span class="mx-2"><a href="{% url 'budgeting' %}">budgeting</a></span>
                 </li>
                 <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2"><a href="{% block analysis %}#{% endblock %}">Analysis</a></span>
+                    <span class="mx-2"><a href="{% url 'analysis' %}">Analysis</a></span>
                 </li>
                 <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2"><a href="{% block settings %}#{% endblock %}">Settings</a></span>
+                    <span class="mx-2"><a href="{% url 'settings' %}">Settings</a></span>
                 </li>
             </ul>
 

@@ -28,6 +28,22 @@ def transaction(request):
     return render(request, 'transaction.html', {'transaction': transaction})
 
 
+def budgeting(request):
+    return render(request, 'budgeting.html')
+
+
+def financial(request):
+    return render(request, 'financial.html')
+
+
+def analysis(request):
+    return render(request, 'analysis.html')
+
+
+def settings(request):
+    return render(request, 'settings.html')
+
+
 def dashboard(request):
     if request.method == 'POST':
         email = request.POST.get('email')

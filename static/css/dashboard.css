@@ -49,6 +49,7 @@
     padding: 2px 20px;
   }
   
-  span {
-    color: #ffffff;
+  li span a{
+    color: #ffffff !important;
+    text-decoration: none;
   }

@@ -16,6 +16,10 @@ def dashboard(request):
     return render(request, 'dashboard.html')
 
 
+def transaction(request):
+    return render(request, 'transaction.html')
+
+
 def dashboard(request):
     if request.method == 'POST':
         email = request.POST.get('email')

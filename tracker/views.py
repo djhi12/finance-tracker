@@ -30,3 +30,18 @@ def dashboard(request):
 
     # Render the dashboard template after successful login
     return render(request, 'dashboard.html')
+
+
+@login_required
+def edit_details(request):
+    if request.method == 'POST':
+        # Get form data
+        email = request.POST.get('email')
+        # Update user details
+        request.user.email = email
+        request.user.save()
+        # Redirect back to the dashboard
+        return redirect('dashboard')
+    else:
+        # If not a POST request, render the edit details form
+        return render(request, 'edit_details.html')

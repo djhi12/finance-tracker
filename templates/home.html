@@ -26,12 +26,14 @@
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control email" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                        aria-describedby="emailHelp" placeholder="Enter email" required>
+                                    <!-- Add required attribute -->
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="password" class="form-control password"
                                         id="exampleInputPassword1" placeholder="Password" oninput="showPassword()"
-                                        onblur="hidePassword()">
+                                        onblur="hidePassword()" required>
+                                    <!-- Add required attribute -->
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

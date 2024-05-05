@@ -26,6 +26,7 @@ def dashboard(request):
             return redirect('dashboard')
         else:
             # Authentication failed
-            return render(request, 'home.html', {'error': 'Invalid email or password'})
+            return render(request, 'dashboard.html', {'error': 'Invalid email or password'})
 
-    return render(request, 'home.html')  # Render the login form initially
+    # Render the dashboard template after successful login
+    return render(request, 'dashboard.html')

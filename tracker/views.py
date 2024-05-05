@@ -17,7 +17,15 @@ def dashboard(request):
 
 
 def transaction(request):
-    return render(request, 'transaction.html')
+    # Logic to fetch and process transaction data from the database
+    # You can replace this with your actual logic to fetch transaction data
+    transaction = [
+        {'date': '2024-05-01', 'description': 'Transaction 1', 'amount': 100},
+        {'date': '2024-05-02', 'description': 'Transaction 2', 'amount': -50},
+        # Add more transaction data as needed
+    ]
+
+    return render(request, 'transaction.html', {'transaction': transaction})
 
 
 def dashboard(request):
@@ -34,18 +42,3 @@ def dashboard(request):
 
     # Render the dashboard template after successful login
     return render(request, 'dashboard.html')
-
-
-@login_required
-def edit_details(request):
-    if request.method == 'POST':
-        # Get form data
-        email = request.POST.get('email')
-        # Update user details
-        request.user.email = email
-        request.user.save()
-        # Redirect back to the dashboard
-        return redirect('dashboard')
-    else:
-        # If not a POST request, render the edit details form
-        return render(request, 'edit_details.html')

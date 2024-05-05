@@ -20,29 +20,29 @@
         <!-- Side-Nav -->
         <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
             <ul class="nav flex-column text-white w-100">
-                <li href="#" class="nav-link">
+                <li class="nav-link">
                     <i class="an an-home"></i>
-                    <span class="mx-2">Overview</span>
+                    <span class="mx-2"><a href="{% block overview %}#{% endblock %}">Overview</a></span>
                 </li>
                 <li class="nav-link">
                     <i class="an an-user"></i>
-                    <span class="mx-2"><a href="{% block transaction %}#{% endblock %}">Transactions</a></span>
+                    <span class="mx-2"><a href="{% url 'transaction' %}">Transactions</a></span>
                 </li>
-                <li href="#" class="nav-link">
+                <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2">Financial Goals</span>
+                    <span class="mx-2"><a href="{% block financial-goals %}#{% endblock %}">Financial Goals</a></span>
                 </li>
-                <li href="#" class="nav-link">
+                <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2">Budgeting</span>
+                    <span class="mx-2"><a href="{% block budgeting %}#{% endblock %}">budgeting</a></span>
                 </li>
-                <li href="#" class="nav-link">
+                <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2">Analysis</span>
+                    <span class="mx-2"><a href="{% block analysis %}#{% endblock %}">Analysis</a></span>
                 </li>
-                <li href="#" class="nav-link">
+                <li class="nav-link">
                     <i class="an an-book"></i>
-                    <span class="mx-2">Settings</span>
+                    <span class="mx-2"><a href="{% block settings %}#{% endblock %}">Settings</a></span>
                 </li>
             </ul>
 
@@ -66,6 +66,7 @@
                         <!-- Main Content -->
                         <div class="main-content">
                             {% block content %}
+                            <h1>Overview</h1>
                             {% endblock %}
                         </div>
                     </div>

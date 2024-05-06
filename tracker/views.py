@@ -16,7 +16,20 @@ def about(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    # Perform data analysis or retrieve current balance from database
+    # Example: Calculate current balance based on income and expenses
+    income_data = [1000, 1500, 2000, 1800, 1200]  # Example income data
+    expenses_data = [500, 700, 800, 1000, 600]     # Example expenses data
+
+    total_income = sum(income_data)
+    total_expenses = sum(expenses_data)
+    current_balance = total_income - total_expenses
+
+    context = {
+        'current_balance': current_balance
+    }
+
+    return render(request, 'dashboard.html', context)
 
 
 def overview(request):

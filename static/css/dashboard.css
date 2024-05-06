@@ -6,7 +6,8 @@
   
   body {
     min-height: 100vh;
-    background-color: #fff;
+    /* background-color: #fff; */
+    /* background: red !important; */
   }
   
   .side-navbar {
@@ -52,4 +53,9 @@
   li span a{
     color: #ffffff !important;
     text-decoration: none;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 5%;
   }

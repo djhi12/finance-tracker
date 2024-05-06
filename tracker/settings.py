@@ -78,7 +78,7 @@ WSGI_APPLICATION = "tracker.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "DB": BASE_DIR / "db.sqlite3",
         'NAME': 'finance',        # Database name
         'USER': 'finance101@email.com',  # Database username
         'PASSWORD': 'finance101',  # Database password

@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import mpld3
+from django.shortcuts import render
 
 
 def home(request):
@@ -53,6 +55,15 @@ def budgeting(request):
 
 
 def financial(request):
+    # Create your Matplotlib plot
+    # fig, ax = plt.subplots()
+    # ax.plot([1, 2, 3, 4], [10, 20, 25, 30],
+    #         linestyle='--', marker='o', color='b')
+
+    # # Convert the plot to HTML
+    # html = mpld3.fig_to_html(fig)
+
+    # Render the 'transactions.html' template with the plot HTML included
     return render(request, 'financial.html')
 
 

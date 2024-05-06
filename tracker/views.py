@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -6,9 +5,10 @@ from django.contrib.auth.decorators import login_required
 import pandas as pd
 import matplotlib.pyplot as plt
 # import mpld3
-from django.shortcuts import render
-
 import numpy as np
+import io
+import urllib
+import base64
 
 
 def home(request):
@@ -20,20 +20,42 @@ def about(request):
 
 
 def dashboard(request):
-    # Perform data analysis or retrieve current balance from database
-    # Example: Calculate current balance based on income and expenses
-    income_data = [1000, 1500, 2000, 1800, 1200]  # Example income data
-    expenses_data = [500, 700, 800, 1000, 600]    # Example expenses data
+    # Example income and expenses data
+    income_data = [1000, 1500, 2000, 1800, 1200]
+    expenses_data = [500, 700, 800, 1000, 600]
 
+    # Calculate total income, total expenses, and current balance
     total_income = sum(income_data)
     total_expenses = sum(expenses_data)
     current_balance = total_income - total_expenses
 
+    # Plotting the income vs expenses graph
+    plt.figure(figsize=(8, 4))
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+    plt.plot(months, income_data, label='Income', marker='o')
+    plt.plot(months, expenses_data, label='Expenses', marker='x')
+    plt.title('Income vs Expenses')
+    plt.xlabel('Months')
+    plt.ylabel('Amount')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+
+    # Convert plot to PNG image
+    buffer = io.BytesIO()
+    plt.savefig(buffer, format='png')
+    buffer.seek(0)
+    plt.close()
+
+    # Embedding the PNG image into HTML
+    graph_url = base64.b64encode(buffer.getvalue()).decode('utf-8')
+    graph_html = f'<img src="data:image/png;base64,{graph_url}" />'
+
+    # Context data to pass to the template
     context = {
         'total_income': total_income,
         'current_balance': current_balance,
-        'income_data': income_data,
-        'expenses_data': expenses_data,
+        'graph': graph_html,  # Pass the HTML containing the image to the template
     }
 
     return render(request, 'dashboard.html', context)
